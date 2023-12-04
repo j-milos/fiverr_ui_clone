@@ -1,77 +1,109 @@
-.featured{
+@import "../../app.module.scss";
+.featured {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  background: url(/img/man.png) no-repeat bottom right #013914;
+  color: white;
+
+  @include tablet {
+    background: #013914;
+    height: 400px;
+  }
+  @include mobile {
+    height: 350px;
+  }
+
+  .container {
+    max-width: 1400px;
     display: flex;
-    justify-content: center;
-    height: 600px;
-    background-color: #013914;
-    color: white;
-    .container{
-        display: flex;
-        align-items: center;
-        width: 1400px;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0px 38px;
 
-        .left{
-            display: flex;
-            flex-direction: column;
-            gap:30px;
-            h1{
-                font-size: 50px;
-
-                i{
-                    font-weight: 300;
-                }
-            }
-            .search{
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                background-color: white;
-                border-radius: 5px;
-
-                .searchInput{
-                    display: flex;
-                    align-items: center;
-                    gap:10px;
-                    
-                    input{
-                        
-                        border: none;
-                        outline: none;
-                        
-                    }
-                }
-                button{
-                    width: 120px;
-                    height: 50px;
-                    border: none;
-                    background-color:#1dbf73;
-                    color: white;
-                    cursor: pointer;
-                    border-radius: 5px;
-
-                }
-            }
-            .popular{
-                display: flex;
-                align-items: center;
-                gap: 10px;
-                button{
-                    background-color: transparent;
-                    color: white;
-                    border: 1px solid white;
-                    padding: 5px 10px;
-                    border-radius: 20px;
-                    font-size: 14px;
-                    cursor: pointer;
-                }
-            }
-        }
-        .right{
-            height: 100%;
-            
-            img{
-                height: 100%;
-                object-fit: contain;
-            }
-        }
+    @include tablet {
+      align-items: center;
+      margin: 0 80px;
     }
+
+    @include mobile {
+      margin: 0 20px;
+    }
+
+    h1 {
+      font-size: 50px;
+      @include tablet {
+        font-size: 40px;
+        align-self: stretch;
+      }
+
+      @include mobile {
+        font-size: 25px;
+        align-self: stretch;
+      }
+
+      i {
+        font-weight: 300;
+      }
+    }
+
+    .search {
+      display: flex;
+      justify-content: space-between;
+      background-color: white;
+      border-radius: 5px;
+      max-width: 600px;
+
+      @include tablet {
+        max-width: 100%;
+        align-self: stretch;
+      }
+
+      input[type="text"] {
+        flex: 1;
+        gap: 10px;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        padding: 0 20px;
+        font-weight: 500;
+        font-size: 14px;
+      }
+      ::placeholder {
+        color: rgb(62, 58, 58);
+      }
+      :global(.svg-inline--fa) {
+        min-width: 40px;
+        height: 18px;
+        padding: 15px;
+        border: none;
+        background-color: #1dbf73;
+        color: white;
+        cursor: pointer;
+        border-radius: 0 5px 5px 0;
+      }
+    }
+    .popular {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      @include tablet {
+        display: none;
+      }
+
+      .featuredBtn {
+        background-color: transparent;
+        color: white;
+        border: 1px solid white;
+        padding: 5px 10px;
+        border-radius: 20px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+    }
+  }
 }

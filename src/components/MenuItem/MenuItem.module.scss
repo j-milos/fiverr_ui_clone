@@ -1,0 +1,17 @@
+.menuTitleArrowWrapper {
+  display: flex;
+  justify-content: space-between;
+
+  .arrowDiv {
+    height: "100%";
+    padding-right: 20px;
+  }
+}
+.submenuStyle {
+  text-decoration: none;
+  list-style: none;
+  color: rgb(107, 104, 104);
+  font-size: 16px;
+  font-weight: 400;
+  padding-top: 20px;
+}

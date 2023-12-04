@@ -1,20 +1,32 @@
-.trustedBy{
-    background-color: #f0f0f0;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    .container{
-        width: 760px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 20px;
-        color: rgb(167, 165, 165);
-        font-weight: 500;
+@import "../../app.module.scss";
+.trustedBy {
+  background-color: #f0f0f0;
+  height: 100px;
+  display: flex;
+  justify-content: center;
 
-        img{
-            height: 50px;
-            object-fit: contain;
-        }
+  .container {
+    max-width: 760px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    color: rgb(167, 165, 165);
+    font-weight: 500;
+    @include mobile {
+      gap: 10px;
     }
+    img {
+      height: 50px;
+      object-fit: contain;
+    }
+    @include mobile {
+      span {
+        display: none;
+      }
+    }
+  }
 }

@@ -1,0 +1,83 @@
+.sideMenuWrapper {
+  display: flex;
+
+  .sideMenu {
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    left: 0;
+    background-color: white;
+    z-index: 999;
+
+    #side-button {
+      background-color: #1dbf73;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      width: max-content;
+      margin: 20px;
+      border: none;
+      z-index: 999;
+    }
+
+    li {
+      line-height: 60px;
+
+      a {
+        position: relative;
+        text-decoration: none;
+        color: rgb(107, 104, 104);
+        font-size: 16px;
+        font-weight: 400;
+        margin-left: 20px;
+        display: block;
+      }
+
+      li {
+        line-height: 22px;
+        border-bottom: none;
+        max-width: 250px;
+        z-index: 999;
+        a {
+          padding-left: 20px;
+        }
+      }
+    }
+
+    // Proveri ovo kako moze bolje
+
+    span {
+      color: rgb(107, 104, 104);
+      font-size: 16px;
+      font-weight: 400;
+      margin-left: 20px;
+    }
+    .boldTitleSection {
+      margin-top: 60px;
+      span {
+        color: rgb(46, 45, 45);
+        font-size: 15px;
+        font-weight: 600;
+      }
+      hr {
+        max-width: 220px;
+        align-self: center;
+        margin: 10px 10px;
+        border: 1px solid rgb(237, 235, 235);
+      }
+    }
+  }
+
+  .overlay {
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
