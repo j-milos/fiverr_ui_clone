@@ -57,18 +57,17 @@ function Navbar() {
   const currentUser = {
     id: 1,
     username: "John Doe",
-    isSeller: true,
+    isSeller: false,
   };
+
+  const navbarBtnActive = active || pathname !== "/";
 
   return (
     <div
-      className={
-        active || pathname !== "/"
-          ? `${s.navbar} ${s.active}`
-          : `${s.navbar} ${s.joinBtnActive}`
-      }
+      className={clsx(s.navbar, {
+        [s.active]: navbarBtnActive,
+      })}
     >
-      {/* Kako da stavim uslov za pathname u clsx-u? Da bi se videlo dugme kad nije na homu */}
       <SideMenu
         open={isSideMenuOpened}
         onClose={() => setIsSideMenuOpened(false)}
@@ -130,12 +129,7 @@ function Navbar() {
             <>
               <span className={s.mainLinks}>Sign in</span>
               <Link className="link" to="/register">
-                <button
-                  className={clsx(s.joinBtn, { [s.joinBtnActive]: active })}
-                >
-                  {/* Da li pravim novu klasu ili stavljam unutar klase kad je aktivna */}
-                  Join
-                </button>
+                <button className={clsx(s.joinBtn)}>Join</button>
               </Link>
             </>
           )}
@@ -145,16 +139,6 @@ function Navbar() {
       {activeMenu && (
         <>
           <hr />
-          {/* 1. className={s.menu} */}
-          {/* 2. className={s.navbar s.active} */}
-          {/* clsx(s.menu,s.menuBlue,
-           {
-            [s.someClass]: someBoolean, 
-            [s.blaBlaClass]: someBoolean2 
-            }, someOtherBoolean && s.DocaNemac) */}
-          {/* className={`${s.menu} ${someBoolean ? s.someClass : ''}`} */}
-          {/* className={`Navbar_menu_asdewqase Navbar_someClass_nafia`} */}
-
           <div className={clsx({ [s.menu]: activeMenu })}>
             <Link className="link" to="/">
               Graphics & Design

@@ -11,7 +11,7 @@ interface SideMenuBottomType {
   submenu?: MenuItemElement[];
 }
 
-interface footerItemType {
+interface FooterItemType {
   title: string;
   link: string;
   submenu?: MenuItemElement[];
@@ -135,7 +135,7 @@ export const sideMenuBottom: SideMenuBottomType[] = [
     ],
   },
 ];
-export const footerItem: footerItemType[] = [
+export const footerItem: FooterItemType[] = [
   {
     title: "Categories",
     link: "/",

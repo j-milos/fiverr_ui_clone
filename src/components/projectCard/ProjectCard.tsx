@@ -17,7 +17,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ item }) => {
       <div className={s.projectCard}>
         <img src={img} alt="" />
         <div className={s.info}>
-          <img src={pp} alt="" />
+          <img className={s.infoImg} src={pp} alt="" />
           <div className={s.texts}>
             <h2>{cat}</h2>
             <span>{username}</span>

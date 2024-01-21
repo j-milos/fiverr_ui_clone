@@ -17,7 +17,7 @@ interface MenuItemProps {
 
 export const MenuItem: React.FC<MenuItemProps> = ({
   mainMenuItem,
-  submenu,
+  submenu = [],
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -27,9 +27,8 @@ export const MenuItem: React.FC<MenuItemProps> = ({
         <div className={s.menuTitleArrowWrapper}>
           {mainMenuItem.title}
 
-          {submenu && (
+          {submenu.length > 0 && (
             <div
-              // Move this style to className
               className={s.arrowDiv}
               onClick={(e) => {
                 e.preventDefault();
@@ -44,14 +43,12 @@ export const MenuItem: React.FC<MenuItemProps> = ({
           )}
         </div>
       </Link>
-      {/* Delete this isOpen check, use css classes with isOpen variable */}
-      {isOpen && submenu && submenu.length > 0 && (
-        <ul
-        //  className={clsx({ [s.active]: isOpen })}
-        >
+
+      {submenu.length > 0 && (
+        <ul className={clsx(s.submenu, { [s.active]: isOpen })}>
           {submenu.map((item) => {
             return (
-              <li className={s.submenuStyle}>
+              <li key={item.title} className={s.submenuStyle}>
                 <Link className="link" to={item.link}>
                   {item.title}
                 </Link>

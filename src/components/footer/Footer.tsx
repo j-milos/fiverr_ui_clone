@@ -70,6 +70,7 @@ function Footer() {
         <ul className={s.tabletTopFooter}>
           {footerItem.map((item) => (
             <MenuItem
+              key={item.title}
               mainMenuItem={{ title: item.title, link: item.link }}
               submenu={item.submenu}
             />

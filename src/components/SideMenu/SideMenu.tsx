@@ -1,6 +1,7 @@
 import s from "./SideMenu.module.scss";
 import { sideMenuBottom, sideMenuData } from "./sideMenuData";
 import { MenuItem } from "../MenuItem/MenuItem";
+import { useEffect } from "react";
 
 interface SideMenuProps {
   open: boolean;
@@ -8,6 +9,10 @@ interface SideMenuProps {
 }
 
 function SideMenu({ open, onClose }: SideMenuProps) {
+  useEffect(() => {
+    document.body.style.overflowY = open ? "hidden" : "auto";
+  }, [open]);
+
   if (!open) {
     return null;
   }
@@ -19,6 +24,7 @@ function SideMenu({ open, onClose }: SideMenuProps) {
         <ul>
           {sideMenuData.map((item) => (
             <MenuItem
+              key={item.title}
               mainMenuItem={{ title: item.title, link: item.link }}
               submenu={item.submenu}
             />
@@ -30,6 +36,7 @@ function SideMenu({ open, onClose }: SideMenuProps) {
 
           {sideMenuBottom.map((item) => (
             <MenuItem
+              key={item.title}
               mainMenuItem={{ title: item.title, link: item.link }}
               submenu={item.submenu}
             />

@@ -2,12 +2,14 @@
   display: flex;
 
   .sideMenu {
+    z-index: 999;
     position: fixed;
     width: 250px;
-    height: 100%;
+    top: 0;
+    bottom: 0;
     left: 0;
+    overflow-y: auto;
     background-color: white;
-    z-index: 999;
 
     #side-button {
       background-color: #1dbf73;
@@ -46,8 +48,6 @@
         }
       }
     }
-
-    // Proveri ovo kako moze bolje
 
     span {
       color: rgb(107, 104, 104);

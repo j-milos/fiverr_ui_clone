@@ -3,15 +3,17 @@ import s from "./Gigs.module.scss";
 import GigCard from "../../components/gigCard/GigCard";
 import { gigs } from "../../data";
 
+type SortType = "sales" | "createdAt";
+
 function Gigs() {
-  const [sort, setSort] = useState("sales");
+  const [sort, setSort] = useState<SortType>("sales");
   const [open, setOpen] = useState(false);
 
-  const reSort = (type: string) => {
-    // Da li može ovako?
+  const reSort = (type: SortType) => {
     setSort(type);
     setOpen(false);
   };
+
   return (
     <div className={s.gigs}>
       <div className={s.container}>
