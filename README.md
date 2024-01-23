@@ -2,7 +2,7 @@
 
 ## Description
 
-Project description
+The main focus on this project was to make a fully responsive Fiverr UI clone, crafted using React and Typescript, enhanced with modular SCSS for styling.Experience seamless navigation and aesthetic consistency across diverse devices, delivering a user-friendly platform on desktops, tablets, and smartphones.
 
 ## Instructions
 
