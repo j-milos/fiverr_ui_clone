@@ -57,7 +57,7 @@ function Navbar() {
   const currentUser = {
     id: 1,
     username: "John Doe",
-    isSeller: false,
+    isSeller: true,
   };
 
   const navbarBtnActive = active || pathname !== "/";
